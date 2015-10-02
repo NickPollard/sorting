@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Sorting Hat</title>
+<style>
+body {
+	background-color: #000000;
+	color: #ffffff;
+	font-family: sans-serif;
+	text-align: center;
+}
+</style>
+<script>
+var files = ['gryffindor.m4a', 'ravenclaw.m4a', 'slytherin.m4a', 'hufflepuff.m4a'];
+var audio = files.map(function(name) { return new Audio(name); });
+
+function randomInt(max) {
+	return Math.floor(Math.random() * max - 0.01);
+}
+
+function play() {
+	var i = randomInt(4);
+	audio[i].play();
+}
+
+var spacebar = 32
+function keydown(e) {
+	if (e.keyCode == spacebar)
+		play();
+}
+
+document.addEventListener('keydown', keydown)
+</script>
+</head>
+<body>
+<h1>The Sorting Hat</h1>
+</body>
+</html>
