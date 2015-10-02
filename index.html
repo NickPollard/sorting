@@ -28,7 +28,12 @@ function keydown(e) {
 		play();
 }
 
-document.addEventListener('keydown', keydown)
+function touch(e) {
+	play();
+}
+
+document.addEventListener('keydown', keydown);
+document.addEventListener('touchstart', touch);
 </script>
 </head>
 <body>
